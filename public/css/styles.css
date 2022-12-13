@@ -1,0 +1,94 @@
+/* resets */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --lightgreen: #8fd769;
+    --darkblue: #21202e;
+    --grey: #acacac;
+    --lightgrey: #f6f6f6;
+    --lightblue: #dbebf3;
+    --mainblue: #106494;
+}
+
+
+/* ***** utilities **** */
+
+.container{
+    padding: 20px 30px;
+}
+
+
+/* ******** header ********/
+header{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: var(--darkblue);
+    align-items: center;
+    color: var(--lightgreen);
+}
+
+.main-logo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size:30px;
+    color: var(--lightgreen);
+    text-decoration: none;
+}
+
+header nav a{
+    color: var(--lightgreen);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 20px;
+}
+header nav a:hover{
+    text-decoration: underline;
+}
+
+/*  ********** main *******/
+main{
+    height: calc(100vh - 110px);
+    background-image: url(../images/main_bg_img.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    color: var(--lightgrey);
+    
+}   
+main div.container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: rgba(44, 39, 39, 0.6);
+}
+
+main h2{
+    text-align: center;
+    font-weight: bold;
+    font-size: 46px;
+}
+main .tag-line{
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+    color: var(--lightgreen)
+}
+
+.courses-cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.card{
+    display: flex;
+    gap: 10px;
+}

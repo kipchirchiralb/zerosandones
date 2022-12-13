@@ -1,0 +1,6 @@
+lightgreen #8fd769
+darkblue #21202e
+grey #acacac
+lighgrey #f6f6f6
+bgblue #dbebf3
+mainblue #106494
