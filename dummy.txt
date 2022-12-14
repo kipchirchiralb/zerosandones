@@ -1,0 +1,107 @@
+HTML:
+
+<form>
+  <label>First Name:</label>
+  <input type="text" name="firstname" required>
+  <label>Last Name:</label>
+  <input type="text" name="lastname" required>
+  <label>Email:</label>
+  <input type="email" name="email" required>
+  <label>Password:</label>
+  <input type="password" name="password" required>
+  <label>Confirm Password:</label>
+  <input type="password" name="confirmpassword" required>
+  <label>Course:</label>
+  <select name="course" required>
+    <option>Select a course</option>
+    <option>Web Development</option>
+    <option>Data Science</option>
+    <option>Digital Marketing</option>
+  </select>
+  <input type="submit" value="Sign Up">
+</form>
+CSS:
+
+form {
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 30%;
+margin: 0 auto;
+padding: 1rem;
+}
+
+label {
+margin-top: 1rem;
+font-weight: bold;
+}
+
+input,
+select {
+width: 100%;
+padding: 0.5rem;
+border: 1px solid #ccc;
+border-radius: 0.25rem;
+margin-top: 0.5rem;
+}
+
+input[type="submit"] {
+background-color: #007bff;
+color: white;
+border: none;
+padding: 0.75rem;
+cursor: pointer;
+}
+
+input[type="submit"]:hover {
+background-color: #0069d9;
+}
+
+
+
+/// login form
+
+HTML:
+
+<form>
+  <label>Email:</label>
+  <input type="email" name="email" required>
+  <label>Password:</label>
+  <input type="password" name="password" required>
+  <input type="submit" value="Log In">
+</form>
+CSS:
+
+form {
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 30%;
+margin: 0 auto;
+padding: 1rem;
+}
+
+label {
+margin-top: 1rem;
+font-weight: bold;
+}
+
+input {
+width: 100%;
+padding: 0.5rem;
+border: 1px solid #ccc;
+border-radius: 0.25rem;
+margin-top: 0.5rem;
+}
+
+input[type="submit"] {
+background-color: #007bff;
+color: white;
+border: none;
+padding: 0.75rem;
+cursor: pointer;
+}
+
+input[type="submit"]:hover {
+background-color: #0069d9;
+}

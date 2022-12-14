@@ -7,10 +7,82 @@
     <title>Zeros and Ones Academy</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="shortcut icon" href="images/icon_dark.PNG" type="image/x-icon">
+    <style>
+    /*form styling*/
+    
+    main div.container{
+        justify-content: start;
+        gap: 20px;
+    }
+    main h1{
+        text-align: center;
+    }
+    form {
+        width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        backdrop-filter: blur(16px);
+    }
+
+    /*input styling*/
+    input {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    /*button styling*/
+    button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #3498db;
+        color: #fff;
+        border: 1px solid #3498db;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /*select styling*/
+    select {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    </style>
+          
 
 </head>
 <body>
     <%- include('header')%>
-    <h1>Sign up Page</h1>
+    <main>
+        <div class="container">
+            <h1>Sign up </h1>
+             <form>
+                <input type="text" placeholder="First Name" required>
+                <input type="text" placeholder="Last Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <select>
+                    <option>Select Course</option>
+                    <option>Artificial Intelligence</option>
+                    <option>Web Development</option>
+                    <option>IT Support</option>
+                </select>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </main>
+ 
+
 </body>
 </html>
