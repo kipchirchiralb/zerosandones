@@ -11,6 +11,39 @@
 </head>
 <body>
     <%- include('header')%>
-    <h1>Home Page</h1>
+    <main>
+        <div class="container home-container">
+            <p class="welcome-message">Welcome back <%=user.firstName %> </p>
+            <div class="courses-cards">
+                <div class="card">
+                    <div class="card-icon">
+                        <img src="images/artificial-intelligence.png" alt="Artificial intelligence">
+                    </div>
+                    <div class="card-text">
+                        <h3>Artificial Intelligence</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam cumque sit, sunt iure officiis quis! </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <img src="images/internet.png" alt="web development">
+                    </div>
+                    <div class="card-text">
+                        <h3>Web development</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum iste ab eaque optio libero. Inventore. </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <img src="images/computer.png" alt="IT Support">
+                    </div>
+                    <div class="card-text">
+                        <h3>IT Support</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo officia sunt harum fugit illum ut. </p>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </main>
 </body>
 </html>

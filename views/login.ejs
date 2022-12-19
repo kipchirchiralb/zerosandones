@@ -16,6 +16,10 @@
     main h1{
         text-align: center;
     }
+    main p{
+        text-align: center;
+        color: var(--lightgreen);
+    }
     form {
         width: 400px;
         margin: 0 auto;
@@ -67,6 +71,16 @@
     <main>
         <div class="container">
             <h1>Log In</h1>
+
+            <%if(locals.message){%>
+                <p class="message"><%=locals.message%></p>
+            <%}%>
+
+            <%if(locals.error){%>
+                <p class="message"><%=locals.error%></p>
+            <%}%>
+          
+
              <form action="/login" method="post">
                 <input type="email" name="email" placeholder="Email" required>
                 <input type="password" name="password" placeholder="Password" required>                

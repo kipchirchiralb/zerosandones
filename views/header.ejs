@@ -5,8 +5,13 @@
     </a>
     <nav>
         <a href="/about" class="navlink">About</a>
-        <a href="/login" class="navlink">Log In</a>
-        <a href="/register" class="navlink">Register</a>
+        <%if(locals.isLoggedIn){%>
+            <a href="/profile">Profile</a>
+            <a href="/logout">Log Out</a>
+        <%}else{%>
+            <a href="/login" class="navlink">Log In</a>
+            <a href="/register" class="navlink">Register</a>
+        <%}%>
     </nav>
 
 </header>

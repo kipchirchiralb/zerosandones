@@ -92,3 +92,10 @@ main .tag-line{
     display: flex;
     gap: 10px;
 }
+
+
+/* home view  */
+
+main div.home-container{
+    justify-content: flex-start;
+}
