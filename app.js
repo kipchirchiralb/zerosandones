@@ -2,6 +2,7 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const mysql = require('mysql');
 const session = require('express-session');
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000
@@ -13,8 +14,19 @@ const db = mysql.createConnection({
     database: 'zerosandones'
 })
 
+db.connect(function(err) {
+    if (err) {
+      return console.error('error: ' + err.message);
+    }
+  
+    console.log('Connected to the MySQL server.');
+});
+
 app.set("view engine", "ejs")
-app.use(express.static("public")) 
+// app.use(express.static("public"))  // 
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/profile', express.static(path.join(__dirname, 'public'))) // read further on serving static files on nested routes
+
 app.use(express.urlencoded({ extended: true})) // body-parser
 app.use(session({
     secret: "secretword",
@@ -23,9 +35,10 @@ app.use(session({
 })
 )
 app.use((req,res, next)=>{
-    console.log(res.locals.isLoggedIn)
+    // console.log(req)
     if(req.session.userId){
         res.locals.isLoggedIn = true
+        res.locals.userId = req.session.userId
     }else{
         res.locals.isLoggedIn = false
     }
@@ -143,6 +156,22 @@ app.get('/logout', (req, res) => {
         }
         res.redirect('/')
     })
+})
+
+app.get("/profile/:userId", (req, res)=>{
+    console.log(req.params.userId)
+    db.query(`select * from users where userId = ${Number(req.params.userId)}`, (err, result)=>{
+        if(err) {
+            console.log(err)
+        }else{
+            console.log(result[0])
+            res.render("profile", {user: result[0]})
+        }
+    })
+})
+
+app.all("*", (req, res)=>{
+    res.render("404")
 })
 
 app.listen(PORT, ()=>console.log(`Server listening on ${PORT}`))

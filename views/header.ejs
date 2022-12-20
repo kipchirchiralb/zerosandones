@@ -6,7 +6,7 @@
     <nav>
         <a href="/about" class="navlink">About</a>
         <%if(locals.isLoggedIn){%>
-            <a href="/profile">Profile</a>
+            <a href="/profile/<%=locals.userId%>">Profile</a>
             <a href="/logout">Log Out</a>
         <%}else{%>
             <a href="/login" class="navlink">Log In</a>
