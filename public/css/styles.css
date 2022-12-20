@@ -99,3 +99,26 @@ main .tag-line{
 main div.home-container{
     justify-content: flex-start;
 }
+
+.icons {
+    display: flex;
+    align-items: center;
+    height: max-content;
+    width: 100%;
+    gap: 16px;
+}
+.icons form button{
+    outline: none;
+    border: none;
+    background: transparent;
+    color: var(--lightgreen);
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.icons form button span{
+    color: white;
+    font-size: 1rem;
+}
+ion-icon{
+    pointer-events: none;
+}

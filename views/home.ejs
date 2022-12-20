@@ -22,6 +22,22 @@
                     <div class="card-text">
                         <h3>Artificial Intelligence</h3>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam cumque sit, sunt iure officiis quis! </p>
+                        <div class="icons">
+                            <form action="/upvote" method="post">
+                                <input type="hidden" name="id" value="1">
+                                <button type="submit">
+                                    <ion-icon name="thumbs-up"></ion-icon>
+                                    <span><%=locals.votes[0].upvotes%></span>
+                                </button>
+                            </form>
+                            <form action="/downvote" method="post">
+                                <input type="hidden" name="id" value="1">
+                                <button type="submit">
+                                    <ion-icon name="thumbs-down"></ion-icon>
+                                    <span><%=locals.votes[0].downvotes%></span>
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
@@ -31,6 +47,24 @@
                     <div class="card-text">
                         <h3>Web development</h3>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum iste ab eaque optio libero. Inventore. </p>
+                        <div class="icons">
+                            <form action="/upvote" method="post">
+                                <input type="hidden" name="id" value="2">
+                                <button type="submit">
+                                    <ion-icon name="thumbs-up"></ion-icon>
+                                    <span><%=locals.votes[1].upvotes%></span>
+
+                                </button>
+                            </form>
+                            <form action="/downvote" method="post">
+                                <input type="hidden" name="id" value="2">
+                                <button type="submit">
+                                    <ion-icon name="thumbs-down"></ion-icon>
+                                    <span><%=locals.votes[1].downvotes%></span>
+                                </button>
+                            </form>
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="card">
@@ -40,10 +74,30 @@
                     <div class="card-text">
                         <h3>IT Support</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo officia sunt harum fugit illum ut. </p>
+                        <div class="icons">
+                            <form action="/upvote" method="post">
+                                <input type="hidden" name="id" value="3">
+                                <button type="submit">
+                                    <ion-icon name="thumbs-up"></ion-icon>
+                                    <span><%=locals.votes[2].upvotes%></span>
+
+                                </button>
+                            </form>
+                            <form action="/downvote" method="post">
+                                <input type="hidden" name="id" value="3">
+                                <button type="submit">
+                                    <ion-icon name="thumbs-down"></ion-icon>
+                                    <span><%=locals.votes[2].downvotes%></span>
+
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
              </div>
         </div>
     </main>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

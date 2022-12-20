@@ -53,7 +53,9 @@ app.use((req,res, next)=>{
 
 app.get("/", (req, res) => {
     if(req.session.isLoggedIn){
-        res.render('home', {user: req.session.user})
+        db.query(`SELECT * FROM courses`, (err, results) => {
+            res.render('home', {user: req.session.user, votes: results})
+        })
     }else{
         res.render("index")
     }    
@@ -168,6 +170,49 @@ app.get("/profile/:userId", (req, res)=>{
             res.render("profile", {user: result[0]})
         }
     })
+})
+
+app.post("/upvote", (req, res) => {
+    // upvote logic
+    // check if the currently logged in user has already upvoted the course
+    // if yes, do nothing
+    // else update the upvotes table
+    // update courses table - increment upvote for the course by one
+    db.query(`SELECT * FROM upvotes WHERE courseId = ${req.body.id}  AND userId = ${req.session.userId}`, (err, result)=>{
+        if(err) {
+            console.log(err)
+        }else{
+            if(result.length > 0){
+                // do nothing
+                res.redirect("/")
+            }else{
+                db.query(`INSERT INTO upvotes(userId, courseId) VALUES(${req.session.userId}, ${req.body.id})`, (err, result)=>{
+                    if(err){
+                        console.log(err)
+                    }else{
+                        db.query(`UPDATE courses SET upvotes = upvotes+1 WHERE courseId = ${req.body.id}`, (err, result)=>{
+                            if(!err){
+                                res.redirect("/")
+                            }else{
+                                console.log(err)
+                            }
+                        })
+                    }
+                })
+            }
+        }
+    })    
+})
+
+app.post("/downvote", (req, res) => {
+
+    // logic
+    // check if the logged in user has downvoted the cliked course
+    // if yes , do nothing
+    // else insert courseID and userId into downvotes table
+    // update courses tables
+
+    res.redirect("/")
 })
 
 app.all("*", (req, res)=>{
